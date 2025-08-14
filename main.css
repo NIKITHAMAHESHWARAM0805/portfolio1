@@ -1,0 +1,103 @@
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* Animated Gradient Background */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  background: linear-gradient(-45deg, #f0f4f8, #e6f0ff, #d1f7f2, #eaf3ff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color: #333;
+}
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Header */
+header {
+  background: linear-gradient(90deg, #149ddd, #13c2c2);
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+}
+header img {
+  width: 120px; height: 120px;
+  border-radius: 50%; border: 3px solid white; object-fit: cover;
+}
+
+/* Typing Effect */
+.typing {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #ffeb3b;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #ffeb3b;
+  width: fit-content;
+  margin: auto;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  display: inline-block;
+  margin: 5px; padding: 8px 14px;
+  border-radius: 20px;
+  background: white; color: #149ddd;
+  font-weight: bold; text-decoration: none;
+  transition: all 0.3s ease;
+}
+.nav-btn:hover { background: #ffeb3b; color: #333; }
+
+/* Sections */
+section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+section h2 {
+  color: #149ddd; border-bottom: 2px solid #149ddd;
+  padding-bottom: 5px; display: inline-block;
+}
+
+/* Skills */
+#skills ul {
+  display: flex; flex-wrap: wrap;
+  gap: 10px; justify-content: center;
+}
+#skills li {
+  background: #149ddd; color: white;
+  padding: 8px 15px; border-radius: 20px;
+  list-style: none;
+}
+
+/* Projects */
+#projects .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#projects .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* Highlight Boxes */
+.highlight-box {
+  display: inline-block; padding: 4px 8px;
+  border-radius: 6px; font-weight: bold; color: white;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.highlight-btech { background: #0077b6; }
+.highlight-poly { background: #f59e0b; }
+.highlight-school { background: #16a34a; }
+.highlight-box:hover {
+  box-shadow: 0 0 12px rgba(0,0,0,0.3); transform: scale(1.05);
+}
+
+/* Back to Top Button */
+#backToTop {
+  position: fixed; bottom: 20px; right: 20px;
+  background: #149ddd; color: white;
+  border: none; padding: 10px 14px;
+  border-radius: 50%; font-size: 1.2rem;
+  cursor: pointer; display: none;
+  transition: background 0.3s ease;
+}
+#backToTop:hover { background: #13c2c2; }
