@@ -1,15 +1,14 @@
-/* General Reset */
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-/* Animated Gradient Background */
+/* Global Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1.6;
-  background: linear-gradient(-45deg, #f0f4f8, #e6f0ff, #d1f7f2, #eaf3ff);
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #ffecd2, #fcb69f, #ff9a9e, #fad0c4);
   background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  animation: gradientBG 12s ease infinite;
   color: #333;
 }
+
+/* Background Gradient Animation */
 @keyframes gradientBG {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
@@ -18,86 +17,115 @@ body {
 
 /* Header */
 header {
-  background: linear-gradient(90deg, #149ddd, #13c2c2);
-  color: white;
-  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   text-align: center;
+  padding: 1.5rem 1rem;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+header.scrolled {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 header img {
-  width: 120px; height: 120px;
-  border-radius: 50%; border: 3px solid white; object-fit: cover;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease;
+}
+header.scrolled img {
+  width: 70px;
+  height: 70px;
+  border-color: #007bff;
 }
 
-/* Typing Effect */
-.typing {
-  font-size: 1.1rem;
+/* Header Text */
+header h1 {
+  margin: 0.5rem 0;
+  font-size: 2rem;
   font-weight: bold;
-  color: #ffeb3b;
-  white-space: nowrap;
-  overflow: hidden;
-  border-right: 3px solid #ffeb3b;
-  width: fit-content;
-  margin: auto;
+  color: #fff;
+}
+header.scrolled h1 {
+  color: #333;
 }
 
-/* Navigation Buttons */
-.nav-btn {
-  display: inline-block;
-  margin: 5px; padding: 8px 14px;
-  border-radius: 20px;
-  background: white; color: #149ddd;
-  font-weight: bold; text-decoration: none;
-  transition: all 0.3s ease;
+/* Navigation */
+nav {
+  margin-top: 1rem;
 }
-.nav-btn:hover { background: #ffeb3b; color: #333; }
+nav a.nav-btn {
+  margin: 0 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+header.scrolled nav a.nav-btn {
+  color: #333;
+}
+nav a.nav-btn:hover {
+  text-decoration: underline;
+}
 
-/* Sections */
-section { padding: 40px 20px; max-width: 1000px; margin: auto; }
+/* Section Styles */
+section {
+  padding: 3rem 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  margin: 1rem auto;
+  max-width: 900px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Section Headings */
 section h2 {
-  color: #149ddd; border-bottom: 2px solid #149ddd;
-  padding-bottom: 5px; display: inline-block;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #ff6f61;
 }
 
-/* Skills */
-#skills ul {
-  display: flex; flex-wrap: wrap;
-  gap: 10px; justify-content: center;
-}
-#skills li {
-  background: #149ddd; color: white;
-  padding: 8px 15px; border-radius: 20px;
+/* Lists */
+ul {
   list-style: none;
+  padding: 0;
+}
+ul li {
+  margin: 0.5rem 0;
+  font-size: 1rem;
 }
 
-/* Projects */
-#projects .card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-#projects .card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-}
-
-/* Highlight Boxes */
-.highlight-box {
-  display: inline-block; padding: 4px 8px;
-  border-radius: 6px; font-weight: bold; color: white;
-  transition: box-shadow 0.3s ease, transform 0.3s ease;
-}
-.highlight-btech { background: #0077b6; }
-.highlight-poly { background: #f59e0b; }
-.highlight-school { background: #16a34a; }
-.highlight-box:hover {
-  box-shadow: 0 0 12px rgba(0,0,0,0.3); transform: scale(1.05);
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  margin-top: 2rem;
 }
 
 /* Back to Top Button */
 #backToTop {
-  position: fixed; bottom: 20px; right: 20px;
-  background: #149ddd; color: white;
-  border: none; padding: 10px 14px;
-  border-radius: 50%; font-size: 1.2rem;
-  cursor: pointer; display: none;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #ff6f61;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  display: none;
   transition: background 0.3s ease;
 }
-#backToTop:hover { background: #13c2c2; }
+#backToTop:hover {
+  background: #e55d50;
+}
